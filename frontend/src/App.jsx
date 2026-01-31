@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-//Toast Error
+//Toast Error updated form
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -146,107 +146,53 @@ const App = () => {
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-gray-900 flex justify-between gap-5 rounded-xl mt-3 w-full  py-3 px-3"
+          className="bg-gray-900 flex flex-col sm:flex-row gap-4 sm:gap-5 rounded-2xl mt-4 w-full p-4"
         >
+          {/* Input */}
           <input
             type="text"
-            placeholder="write your task here..."
-            className="px-3 py-2 bg-gray-800 w-full rounded-md outline-0"
+            placeholder="Write your task here..."
+            className="px-4 py-3 bg-gray-800 w-full rounded-lg outline-none text-sm sm:text-base focus:ring-2 focus:ring-orange-500"
             value={task}
             onChange={(e) => setTask(e.target.value)}
           />
-          {/* colors*/}
 
-          <div className="flex items-center gap-4">
-            {/* RED */}
-            <label className="cursor-pointer">
-              <input
-                type="radio"
-                name="color"
-                value="red"
-                checked={color === "red"}
-                onChange={(e) => setColor(e.target.value)}
-                className="hidden"
-              />
-              <span
-                className={`w-6 h-6 rounded-full bg-red-500 block ${color === "red" ? "border-2 border-white" : "border-2 border-transparent"}`}
-              ></span>
-            </label>
-            {/* Blue */}
-            <label className="cursor-pointer">
-              <input
-                type="radio"
-                name="color"
-                value="blue"
-                checked={color === "blue"}
-                onChange={(e) => setColor(e.target.value)}
-                className="hidden"
-              />
-              <span
-                className={`w-6 h-6 rounded-full bg-blue-500 block ${color === "blue" ? "border-2 border-white" : "border-2 border-transparent"}`}
-              ></span>
-            </label>
-            {/* GREEN */}
-            <label className="cursor-pointer">
-              <input
-                type="radio"
-                name="color"
-                value="green"
-                checked={color === "green"}
-                onChange={(e) => setColor(e.target.value)}
-                className="hidden"
-              />
-              <span
-                className={`w-6 h-6 rounded-full bg-green-400 block ${color === "green" ? "border-2 border-white" : "border-2 border-transparent"}`}
-              ></span>
-            </label>
-            {/* Yellow */}
-            <label className="cursor-pointer">
-              <input
-                type="radio"
-                name="color"
-                value="yellow"
-                checked={color === "yellow"}
-                onChange={(e) => setColor(e.target.value)}
-                className="hidden"
-              />
-              <span
-                className={`w-6 h-6 rounded-full bg-yellow-500 block ${color === "yellow" ? "border-2 border-white" : "border-2 border-transparent"}`}
-              ></span>
-            </label>
-            {/* Pink */}
-            <label className="cursor-pointer">
-              <input
-                type="radio"
-                name="color"
-                value="pink"
-                checked={color === "pink"}
-                onChange={(e) => setColor(e.target.value)}
-                className="hidden"
-              />
-              <span
-                className={`w-6 h-6 rounded-full bg-pink-500 block ${color === "pink" ? "border-2 border-white" : "border-2 border-transparent"}`}
-              ></span>
-            </label>
-            {/* Gray */}
-            <label className="cursor-pointer">
-              <input
-                type="radio"
-                name="color"
-                value="gray"
-                checked={color === "gray"}
-                onChange={(e) => setColor(e.target.value)}
-                className="hidden"
-              />
-              <span
-                className={`w-6 h-6 rounded-full bg-gray-300 block ${color === "gray" ? "border-2 border-white" : "border-2 border-transparent"}`}
-              ></span>
-            </label>
+          {/* Colors */}
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 justify-start sm:justify-center">
+            {[
+              { color: "red", bg: "bg-red-500" },
+              { color: "blue", bg: "bg-blue-500" },
+              { color: "green", bg: "bg-green-400" },
+              { color: "yellow", bg: "bg-yellow-500" },
+              { color: "pink", bg: "bg-pink-500" },
+              { color: "gray", bg: "bg-gray-300" },
+            ].map(({ color: c, bg }) => (
+              <label key={c} className="cursor-pointer">
+                <input
+                  type="radio"
+                  name="color"
+                  value={c}
+                  checked={color === c}
+                  onChange={(e) => setColor(e.target.value)}
+                  className="hidden"
+                />
+                <span
+                  className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full ${bg} block transition-all ${
+                    color === c
+                      ? "ring-2 ring-white scale-110"
+                      : "ring-2 ring-transparent hover:scale-105"
+                  }`}
+                ></span>
+              </label>
+            ))}
           </div>
-          <button className="bg-orange-500 hover:bg-700 px-3 py-2 rounded cursor pointer font-bold">
+
+          {/* Button */}
+          <button className="bg-orange-500 hover:bg-orange-600 active:scale-95 px-5 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all w-full sm:w-auto">
             Add
           </button>
         </form>
+
         {/* Tasks */}
         <ul className="flex flex-col gap-2 w-full mt-3">
           {tasks
