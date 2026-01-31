@@ -36,9 +36,9 @@ TaskFlow is a full-stack task management web application that helps users organi
 - 🚀 Deployment: Render
 
 - Optimized for quick and accurate results
-## 🔁 CRUD Operations Demonstrated
+## 🔁 CRUD Operations
 
-- 🟢 Create: Add new tasks with priority and date
+- 🟢 Create: Add new tasks with date
 
 - 🔵 Read: Fetch and display all tasks
 
