@@ -15,7 +15,7 @@ const App = () => {
   const [color, setColor] = useState("gray");
 
   // API_URL
-  const API_URL = "http://localhost:5000/api/tasks";
+  const API_URL = "https://taskflow-backend-4r4g.onrender.com/api/tasks";
 
   // useEFfect Hook
   // Fetch tasks
