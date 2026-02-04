@@ -2,7 +2,7 @@
 # 📝 TaskFlow
 #### 🔰Overview
 
-TaskFlow is a full-stack task management web application that helps users organize and manage their day-to-day tasks efficiently. Users can create tasks, assign priorities using color codes, add creation dates, mark tasks as completed, and delete them once finished. This project showcases complete CRUD operations using the MERN stack and is deployed on Render..
+TaskFlow is a full-stack task management web application that helps users organize and manage their day-to-day tasks efficiently. Users can create tasks, assign priorities using color codes, add creation dates, mark tasks as completed, and delete them once finished. This project showcases complete CRUD operations using the MERN stack and is deployed on Render.
 
 
 ## Live Website
