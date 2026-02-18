@@ -25,6 +25,7 @@ TaskFlow is a full-stack task management web application that helps users organi
 - 📱 Responsive and user-friendly interface
 
 - 🔄 Full CRUD functionality (Create, Read, Update, Delete)
+
 ## 🛠️ Tech Stack
 
 - ⚛️ Frontend: React, Tailwind CSS
